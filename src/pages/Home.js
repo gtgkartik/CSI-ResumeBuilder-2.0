@@ -26,7 +26,7 @@ const Home = () => {
           <div></div>
           <TemplateGallery />
           <div className="flex md:justify-end sm:justify-center w-full my-10">
-            <Link to="/intro">
+            <Link to="/form">
               <button className="bg-green rounded-lg font-juneauBold w-[287px] h-[58px] text-[18px]">
                 GET STARTED
               </button>

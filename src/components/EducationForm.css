@@ -1,0 +1,7 @@
+#container::-webkit-scrollbar-thumb {
+    background-color: #3b82f6; /* Example color, change as needed */
+    border-radius: 8px;
+    margin-left: px; /* Adjust the margin-right as desired */
+  }
+
+
