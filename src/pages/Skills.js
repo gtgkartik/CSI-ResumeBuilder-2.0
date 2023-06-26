@@ -5,9 +5,10 @@ import Stepper from "../components/Stepper";
 import Form from "../components/Form";
 import StepperControl from "../components/StepperControl";
 import EducationForm from "../components/EducationForm";
+import SkillsForm from "../components/SkillsForm";
 
 
-const Education = (props) => {
+const Skills = (props) => {
   return (
     <>
       <Helmet>
@@ -37,8 +38,8 @@ const Education = (props) => {
         </div>
 
         <div className="md:w-[60%] sm:w-full flex justify-center">
-          <div className="md:w-[800px] md:h-[650px] sm:w-[440px] sm:h-[900px] ls:w-full ls:h-[650px] bg-green rounded-3xl ls:pl-[49px] pt-[20px] px-5 justify-between">
-            <EducationForm  handleClickNext = {props.handleNext} handleClickPrev = {props.handlePrev}/>
+          <div className="md:w-[800px] md:h-[800px] sm:w-[440px] sm:h-[1000px] ls:w-full ls:h-[1000px] bg-green rounded-3xl ls:pl-[49px] pt-[20px] px-5">
+            <SkillsForm  handleClickNext = {props.handleNext} handleClickPrev = {props.handlePrev}/>
           </div>
         </div>
       </div>
@@ -46,4 +47,4 @@ const Education = (props) => {
   );
 };
 
-export default Education;
+export default Skills;

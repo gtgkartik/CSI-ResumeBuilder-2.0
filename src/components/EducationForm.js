@@ -12,7 +12,7 @@ const EducationForm = (props) => {
       };
     
   return (
-    <div className="md:items-start flex flex-col sm:items-center ls:items-start ls:pr-[30px] sm:w-full">
+    <div className="md:items-start flex flex-col sm:items-center ls:items-start ls:pr-[30px] sm:w-full ">
       <h1 className="font-juneauBold md:text-[40px] sm:text-[30px] ls:text-[35px]">
         Add a bit about your Education.
       </h1>

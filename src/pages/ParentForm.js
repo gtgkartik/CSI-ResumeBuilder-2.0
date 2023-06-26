@@ -6,6 +6,7 @@ import Stepper from "../components/Stepper";
 import Form from "../components/Form";
 import Intro from "./Intro";
 import Education from "./Education";
+import Skills from "./Skills";
 
 const ParentForm = () => {
   const formList = [
@@ -27,20 +28,14 @@ const ParentForm = () => {
     setPage(page === formLength - 1 ? 0 : page + 1);
     console.log("pressed forward");
   };
-  console.log(page);
-  const handleForm = () => {
-    switch (page) {
-      case 0:
-        return <div>asc</div>;
-      case 1:
-        return <div>this is Education System</div>;
-    }
-  };
+
   return (  
     <>
       {page === 0 && <Intro handleNext={handleNext} handlePrev={handlePrev} />}
       {page === 1 && <Education handleNext={handleNext} handlePrev={handlePrev}/>}
-      
+      {page === 2 && <Skills handleNext={handleNext} handlePrev={handlePrev}/>}
+
+
 
     </>
   );
