@@ -8,6 +8,9 @@ import EducationForm from "../components/EducationForm";
 
 
 const Education = (props) => {
+  const pn = props.pagenum;
+  const tnp = props.totalpages;
+  const per = Math.floor(pn/tnp*100);
   return (
     <>
       <Helmet>
@@ -19,19 +22,19 @@ const Education = (props) => {
           <div className="flex  justify-center">
             <Circle
               className="w-[350px]"
-              percent={80}
+              percent={per}
               strokeWidth={6}
               strokeColor="#BAFE66"
               trailColor="#ECFFD3"
               trailWidth={6}
             />
             <h1 className="absolute left-1/2 top-[170px] transform -translate-x-1/2 -translate-y-1/2 font-juneauBold text-[68px]">
-              70%
+              {per}%
             </h1>
           </div>
           <div className="md:w-full items-center mt-[100px] ls:w-[600px] justify-center ">
             <div className="container horizontal ">
-              <Stepper />
+              <Stepper element1={props.element}/>
             </div>
           </div>
         </div>

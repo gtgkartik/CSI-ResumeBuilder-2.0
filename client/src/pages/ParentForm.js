@@ -31,9 +31,9 @@ const ParentForm = () => {
 
   return (  
     <>
-      {page === 0 && <Intro handleNext={handleNext} handlePrev={handlePrev} />}
-      {page === 1 && <Education handleNext={handleNext} handlePrev={handlePrev}/>}
-      {page === 2 && <Skills handleNext={handleNext} handlePrev={handlePrev}/>}
+      {page === 0 && <Intro handleNext={handleNext} handlePrev={handlePrev} pagenum={page+1} totalpages = {formLength} element={page}/>}
+      {page === 1 && <Education handleNext={handleNext} handlePrev={handlePrev} pagenum={page+1} totalpages = {formLength} element={page}/>}
+      {page === 2 && <Skills handleNext={handleNext} handlePrev={handlePrev} pagenum={page+1} totalpages = {formLength} element={page}/>}
 
 
 
