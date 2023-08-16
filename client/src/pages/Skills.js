@@ -2,9 +2,9 @@ import NavbarDark from "../components/NavbarDark";
 import { Helmet } from "react-helmet";
 import { Line, Circle } from "rc-progress";
 import Stepper from "../components/Stepper";
-import Form from "../components/Form";
-import StepperControl from "../components/StepperControl";
-import EducationForm from "../components/EducationForm";
+// import Form from "../components/Form";
+// import StepperControl from "../components/StepperControl";
+// import EducationForm from "../components/EducationForm";
 import SkillsForm from "../components/SkillsForm";
 
 
@@ -35,7 +35,7 @@ const Skills = (props) => {
           </div>
           <div className="md:w-full items-center mt-[100px] ls:w-[600px] justify-center ">
             <div className="container horizontal ">
-              <Stepper element1={props.element}/>
+              <Stepper element1={props.pagenum}/>
             </div>
           </div>
         </div>

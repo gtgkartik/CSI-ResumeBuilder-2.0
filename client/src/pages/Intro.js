@@ -3,7 +3,6 @@ import { Helmet } from "react-helmet";
 import { Line, Circle } from "rc-progress";
 import Stepper from "../components/Stepper";
 import Form from "../components/Form";
-import StepperControl from "../components/StepperControl";
 
 
 const Intro = (props) => {
@@ -33,7 +32,7 @@ const Intro = (props) => {
           </div>
           <div className="md:w-full items-center mt-[100px] ls:w-[600px] justify-center ">
             <div className="container horizontal ">
-              <Stepper element1={props.element}/>
+              <Stepper element1={props.pagenum}/>
             </div>
           </div>
         </div>
