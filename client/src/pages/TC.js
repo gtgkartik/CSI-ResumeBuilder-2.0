@@ -38,7 +38,7 @@ const TC = (props) => {
 
         <div className="md:w-[60%] sm:w-full flex justify-center">
           <div className="md:w-[800px] md:h-[650px] sm:w-[440px] sm:h-[900px] ls:w-full ls:h-[650px] bg-green rounded-3xl ls:pl-[49px] pt-[20px] px-5 justify-between">
-            <TCForm handleClickPrev = {props.handlePrev} handleClickSubmit = {props.handleSubmit}/>
+            <TCForm handleClickPrev = {props.handlePrev} handleClickSubmit = {props.handleSubmit} template={props.template}/>
           </div>
         </div>
       </div>

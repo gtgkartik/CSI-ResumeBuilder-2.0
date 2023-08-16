@@ -39,7 +39,7 @@ const Intro = (props) => {
 
         <div className="md:w-[60%] sm:w-full flex justify-center">
           <div className="md:w-[800px] md:h-[650px] sm:w-[440px] sm:h-[900px] ls:w-full ls:h-[650px] bg-green rounded-3xl ls:pl-[49px] pt-[20px] px-5">
-            <Form  handleClickNext = {props.handleNext} handleClickPrev = {props.handlePrev}/>
+            <Form  handleClickNext = {props.handleNext}/>
           </div>
         </div>
       </div>

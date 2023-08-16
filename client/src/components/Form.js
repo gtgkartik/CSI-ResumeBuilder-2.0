@@ -23,7 +23,7 @@ const Form = (props) => {
           <TextField description="Small Description"/>
         </div>
         <div className="col-span-1">
-        <StepperControl nextButton = {props.handleClickNext} prevButton = {props.handleClickPrev}/>
+        <StepperControl nextButton = {props.handleClickNext}/>
         </div>
       </div>
     </div>

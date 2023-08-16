@@ -34,6 +34,7 @@ const TCForm = (props) => {
         <StepperControl
           prevButton={props.handleClickPrev}
           submitButton={props.handleClickSubmit}
+          template = {props.template}
         />
       </div>
     </div>
