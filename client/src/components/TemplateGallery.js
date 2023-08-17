@@ -5,7 +5,7 @@ import image1 from "../Images/Screenshot_from_2023-08-16_18-26-19.jpg";
 const templates = [
   {
     id: 1,
-    img:image1,
+    img: image1,
   },
   {
     id: 2,
@@ -18,11 +18,11 @@ const templates = [
 ];
 
 const TemplateGallery = (props) => {
-  const [selectedTemplate,setSelectedTemplate] = useState(templates[0].id);
+  const [selectedTemplate,setSelectedTemplate] = useState(null);
 
-  const handleImageClick = (templateId) => {
+  const handleImageClick = (templateId = 1) => {
     setSelectedTemplate(templateId);
-    props.onDataProcessed(templateId)
+    props.onDataProcessed(templateId);
   };
   return (
     <>
