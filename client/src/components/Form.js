@@ -20,10 +20,10 @@ const Form = (props) => {
         <Field2 width="full" fieldName = "Linkdin Profile Link"/>
         <Field2 width="full" fieldName = "City" />
         <div className="sm:col-span-1 md:col-span-2 ls:col-span-2">
-          <TextField />
+          <TextField description="Small Description"/>
         </div>
         <div className="col-span-1">
-        <StepperControl nextButton = {props.handleClickNext} prevButton = {props.handleClickPrev}/>
+        <StepperControl nextButton = {props.handleClickNext}/>
         </div>
       </div>
     </div>

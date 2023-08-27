@@ -2,8 +2,14 @@ import Navbar from "../components/Navbar";
 import TemplateGallery from "../components/TemplateGallery";
 import { Link } from "react-router-dom";
 import { Helmet } from 'react-helmet';
+import { useState } from "react";
 
 const Home = () => {
+  const [selectedTemplate, setSelectedTemplate] = useState(null);
+
+  const handleDataProcessed = (processedResult) => {
+    setSelectedTemplate(processedResult);
+  };
   return (
     <>
     <Helmet>
@@ -24,13 +30,14 @@ const Home = () => {
             the best designs. Choose one style from below.
           </h1>
           <div></div>
-          <TemplateGallery />
+          <TemplateGallery onDataProcessed={handleDataProcessed}/>
           <div className="flex md:justify-end sm:justify-center w-full my-10">
-            <Link to="/form">
+          {selectedTemplate !== null ? (
+            <Link to={`/form?data=${selectedTemplate}`}>
               <button className="bg-green rounded-lg font-juneauBold w-[287px] h-[58px] text-[18px]">
                 GET STARTED
               </button>
-            </Link>
+            </Link>):(<p className="text-red-500">Please select an Template before proceeding.</p>)}
           </div>
         </div>
       </div>

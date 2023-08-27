@@ -2,18 +2,15 @@ import NavbarDark from "../components/NavbarDark";
 import { Helmet } from "react-helmet";
 import { Line, Circle } from "rc-progress";
 import Stepper from "../components/Stepper";
-// import Form from "../components/Form";
-// import StepperControl from "../components/StepperControl";
-import EducationForm from "../components/EducationForm";
+import ExperienceForm from "../components/ExperienceForm"
 
-
-const Education = (props) => {
-  const pn = props.pagenum;
-  const tnp = props.totalpages;
-  const per = Math.floor(pn/tnp*100);
-  return (
-    <>
-      <Helmet>
+const Experience = (props) => {
+    const pn = props.pagenum;
+    const tnp = props.totalpages;
+    const per = Math.floor(pn/tnp*100);
+    return(
+        <>
+        <Helmet>
         <style>{`body { background-color: white; }`}</style>
       </Helmet>
       <NavbarDark bgcolor="dark" />
@@ -41,12 +38,12 @@ const Education = (props) => {
 
         <div className="md:w-[60%] sm:w-full flex justify-center">
           <div className="md:w-[800px] md:h-[650px] sm:w-[440px] sm:h-[900px] ls:w-full ls:h-[650px] bg-green rounded-3xl ls:pl-[49px] pt-[20px] px-5 justify-between">
-            <EducationForm  handleClickNext = {props.handleNext} handleClickPrev = {props.handlePrev}/>
+            <ExperienceForm  handleClickNext = {props.handleNext} handleClickPrev = {props.handlePrev}/>
           </div>
         </div>
       </div>
-    </>
-  );
+        </>
+    );
 };
 
-export default Education;
+export default Experience;
