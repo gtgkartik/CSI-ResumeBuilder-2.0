@@ -3,20 +3,24 @@ import TemplateGallery from "../components/TemplateGallery";
 import { Link } from "react-router-dom";
 import { Helmet } from 'react-helmet';
 import { useState } from "react";
+import { useSelector } from "react-redux";
 
-const Home = () => {
+const SelectTemplate = () => {
   const [selectedTemplate, setSelectedTemplate] = useState(null);
+  const user = useSelector((state) => state.userState.user);
 
   const handleDataProcessed = (processedResult) => {
     setSelectedTemplate(processedResult);
   };
+
+  console.log(user);
   return (
     <>
     <Helmet>
     <style>{`body { background-color: #111727; }`}</style>
     </Helmet>
       <div >
-        <Navbar bgcolor="white"  />
+        {/* <Navbar bgcolor="white"  /> */}
         <div
           className={`md:px-[105px] ls:px-[105px] sm:px-[60px] ls:mt-[30px] sm:mt-[24px] `}
         >
@@ -45,4 +49,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default SelectTemplate;
