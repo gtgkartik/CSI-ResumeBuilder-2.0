@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { Helmet } from 'react-helmet';
 import { useState } from "react";
 import { useSelector } from "react-redux";
+import { Navigate } from "react-router-dom";
 
 const SelectTemplate = () => {
   const [selectedTemplate, setSelectedTemplate] = useState(null);
@@ -16,6 +17,9 @@ const SelectTemplate = () => {
   console.log(user);
   return (
     <>
+    {!user && <Navigate to='/' />
+        /* If user not loggedIn redirect to Login Page */
+      }
     <Helmet>
     <style>{`body { background-color: #111727; }`}</style>
     </Helmet>

@@ -5,7 +5,7 @@ const Navbar = (props) => {
   return (
     <>
       <div
-        className={`w-full  bg-white  md:flex sm:flex ls:flex justify-between md:px-[107px] ls:px-[60px] sm:px-[30px]  h-[96px] items-center`}
+        className={`w-full  bg-white  md:flex sm:flex ls:flex justify-between md:px-[107px] ls:px-[60px] sm:px-[30px]  h-[96px] items-center border border-black-1500`}
       >
         {/* Primary Navbar  */}
         <div className="flex items-center font-bold space-x-2">
