@@ -1,3 +1,4 @@
+import React, {useState} from "react";
 import Field2 from "./Field2";
 import TextField from "./TextField";
 
@@ -5,7 +6,7 @@ const ExperienceSection =()=> {
     return(
         <>
         <div className="grid sm:grid-cols-1 md:grid-cols-2 ls:grid-cols-2 gap-[40px] mt-14 w-full ">
-            <Field2 width="full" fieldName="Title"/>
+            <Field2 width="full" fieldName="Title" />
             <Field2 width="full" fieldName="Employment Type"/>
             <Field2 width="full" fieldName="Company Name"/>
             <Field2 width="full" fieldName="Location"/>

@@ -6,6 +6,7 @@ const ExperienceForm = (props) => {
     const [expSections, setExpSections] = useState([]);
     const addExpSection = () => {
         setExpSections([...expSections, expSections.length + 1]);
+        console.log(expSections);
       };
     return(
         <>

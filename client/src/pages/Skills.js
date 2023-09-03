@@ -1,17 +1,19 @@
-import NavbarDark from "../components/NavbarDark";
 import { Helmet } from "react-helmet";
-import { Line, Circle } from "rc-progress";
+import { Circle } from "rc-progress";
 import Stepper from "../components/Stepper";
 // import Form from "../components/Form";
 // import StepperControl from "../components/StepperControl";
 // import EducationForm from "../components/EducationForm";
 import SkillsForm from "../components/SkillsForm";
+import { useSelector } from "react-redux";
 
 
 const Skills = (props) => {
+  const ps = useSelector((state) => state.userState.educationSections);
   const pn = props.pagenum;
   const tnp = props.totalpages;
   const per = Math.floor(pn/tnp*100);
+  console.log(ps)
   return (
     <>
       <Helmet>

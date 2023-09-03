@@ -5,12 +5,17 @@ import Stepper from "../components/Stepper";
 // import Form from "../components/Form";
 // import StepperControl from "../components/StepperControl";
 import EducationForm from "../components/EducationForm";
+import { useSelector, useDispatch } from "react-redux";
 
 
 const Education = (props) => {
+  const ps = useSelector((state) => state.userState.introdata);
+  const dispatch = useDispatch()
   const pn = props.pagenum;
   const tnp = props.totalpages;
   const per = Math.floor(pn/tnp*100);
+
+  console.log(ps);
   return (
     <>
       <Helmet>
