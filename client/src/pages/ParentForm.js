@@ -9,6 +9,7 @@ import Projects from "./Projects";
 import Experience from "./Experience";
 import PA from "./PA"
 import TC from "./TC"
+import ResumeTemplate from "./Pdf";
 
 const ParentForm = () => {
   const user = useSelector((state) => state.userState.user);
@@ -20,6 +21,7 @@ const ParentForm = () => {
     "Publications/Achievements",
     "Experience",
     "Training/Courses",
+    "Pdf_Genaration",
   ];
   const [page, setPage] = useState(0);
   const formLength = formList.length;
@@ -40,8 +42,8 @@ const ParentForm = () => {
   };
 
   const handleSubmit = () => {
-    window.location.href = '/pdf';
-    console.log("pressed Submit");
+    setPage(page === formLength - 1 ? 0 : page + 1);
+    console.log("pressed submit");
   };
 
   useEffect(() => {
@@ -64,6 +66,7 @@ const ParentForm = () => {
       {page === 4 && <PA handleNext={handleNext} handlePrev={handlePrev} pagenum={page} totalpages = {formLength}/>}
       {page === 5 && <Experience handleNext={handleNext} handlePrev={handlePrev} pagenum={page} totalpages = {formLength}/>}
       {page === 6 && <TC handlePrev={handlePrev} handleSubmit={handleSubmit} pagenum={page} totalpages = {formLength} template={data}/>}
+      {page === 7 && <ResumeTemplate/>}
     </>
   );
 };

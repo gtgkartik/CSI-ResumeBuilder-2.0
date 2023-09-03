@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
 import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
+import { useSelector } from 'react-redux';
+import { Navigate } from 'react-router-dom';
 
 const ResumeTemplate = () => {
+  const user = useSelector((state) => state.userState.user);
+  const ps = useSelector((state) => state.userState.expSections);
   const [name, setName] = useState('Akshay');
   const [email, setEmail] = useState('guytyrd');
   const [education, setEducation] = useState('ftrdesdfg');
@@ -18,6 +22,8 @@ const ResumeTemplate = () => {
       });
     }
   };
+
+  console.log(ps);
 
   return (
     <div>

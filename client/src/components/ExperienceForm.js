@@ -1,13 +1,21 @@
 import { useState } from "react";
 import ExperienceSection from "./ExperienceSection";
 import StepperControl from "./StepperControl";
+import { useDispatch } from "react-redux";
+import { updateExpSections } from "../redux/Slice/user";
 
 const ExperienceForm = (props) => {
+    const dispatch = useDispatch();
     const [expSections, setExpSections] = useState([]);
     const addExpSection = () => {
-        setExpSections([...expSections, expSections.length + 1]);
-        console.log(expSections);
+        setExpSections([...expSections, {}]);
       };
+    const updateExpSection = (index, updatedData) => {
+        const updatedSections = [...expSections];
+        updatedSections[index] = updatedData;
+        setExpSections(updatedSections);
+      };
+    dispatch(updateExpSections(expSections));
     return(
         <>
         <div className="md:items-start flex flex-col sm:items-center ls:items-start ls:pr-[30px] sm:w-full ">
@@ -18,9 +26,9 @@ const ExperienceForm = (props) => {
         Let your Recruiter know What Experiences You have !
       </h1>
       <div id="container" className="sm:h-[490px] ls:h-[300px] overflow-y-auto ">
-      <ExperienceSection />
+      {/* <ExperienceSection /> */}
         {expSections.map((section, index) => (
-          <ExperienceSection key={index} />
+          <ExperienceSection key={index+1} expdata={section} setExpdata={(updatedData) => updateExpSection(index, updatedData)}/>
         ))}
       </div>
    

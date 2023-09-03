@@ -19,7 +19,6 @@ const Skills = (props) => {
       <Helmet>
         <style>{`body { background-color: white; }`}</style>
       </Helmet>
-      {/* <NavbarDark bgcolor="dark" /> */}
       <div className="flex sm:flex-col md:flex-row md:justify-between sm:justify-center md:items-center md:space-x-8 ls:px-10 mt-[34px]">
         <div className="relative md:w-[40%] md:order-first">
           <div className="flex  justify-center">
@@ -51,5 +50,5 @@ const Skills = (props) => {
     </>
   );
 };
-
+/* <NavbarDark bgcolor="dark" /> */
 export default Skills;

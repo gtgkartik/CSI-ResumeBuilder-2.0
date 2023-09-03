@@ -11,6 +11,11 @@ const initialState = {
         city: ''
       },
     educationSections: [],
+    addSkills: [],
+    projectSections: [],
+    paSections: [],
+    expSections: [],
+    tcSections: [],
     
 }
 
@@ -25,11 +30,26 @@ export const userSlice = createSlice({
             state.introdata = action.payload
         },
         updateEducationSections: (state, action) => {
-            state.educationSections = [...state.educationSections, action.payload];
+            state.educationSections = action.payload;
+        },
+        updateSkills: (state, action) => {
+            state.addSkills = action.payload;
+        },
+        updateprojectSections: (state, action) => {
+            state.projectSections = action.payload;
+        },
+        updatepaSections: (state, action) => {
+            state.paSections = action.payload;
+        },
+        updateExpSections: (state, action) => {
+            state.expSections = action.payload;
+        },
+        updateTcSections: (state, action) => {
+            state.tcSections = action.payload;
         },
     },
 })
 
-export const {adduser, addintro, updateEducationSections} = userSlice.actions;
+export const {adduser, addintro, updateEducationSections, updateSkills, updateprojectSections, updatepaSections, updateExpSections, updateTcSections} = userSlice.actions;
 
 export default userSlice.reducer

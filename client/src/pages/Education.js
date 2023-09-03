@@ -1,16 +1,15 @@
-import NavbarDark from "../components/NavbarDark";
+// import NavbarDark from "../components/NavbarDark";
 import { Helmet } from "react-helmet";
-import { Line, Circle } from "rc-progress";
+import { Circle } from "rc-progress";
 import Stepper from "../components/Stepper";
 // import Form from "../components/Form";
 // import StepperControl from "../components/StepperControl";
 import EducationForm from "../components/EducationForm";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 
 
 const Education = (props) => {
   const ps = useSelector((state) => state.userState.introdata);
-  const dispatch = useDispatch()
   const pn = props.pagenum;
   const tnp = props.totalpages;
   const per = Math.floor(pn/tnp*100);

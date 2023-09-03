@@ -1,9 +1,7 @@
 import { useState,useEffect } from "react";
 import Field2 from "./Field2";
-import { useDispatch } from "react-redux";
-import { updateEducationSections } from "../redux/Slice/user";
 
-const EducationSection = () => {
+const EducationSection = ({edudata, setEdudata}) => {
   const [degree, setDegree] = useState('');
   const [fos, setFos] = useState('');
   const [sn, setSn] = useState('');
@@ -11,20 +9,19 @@ const EducationSection = () => {
   const [cgpa, setCgpa] = useState('');
   const [sy, setSy] = useState('');
   const [ey, setEy] = useState('');
-  const dispatch = useDispatch();
 
   useEffect(()=> {
-  const edudata = {
-    "degree":degree,
-    "fos":fos,
-    "sn":sn,
-    "loc":loc,
-    "cgpa":cgpa,
-    "sy":sy,
-    "ey":ey,
-  };
-  dispatch(updateEducationSections(edudata));
-  }, [degree, fos, sn, loc, cgpa, sy, ey, dispatch]);
+    const edudata = {
+      "degree":degree,
+      "fos":fos,
+      "sn":sn,
+      "loc":loc,
+      "cgpa":cgpa,
+      "sy":sy,
+      "ey":ey,
+    };
+    setEdudata(edudata);
+  }, [degree, fos, sn, loc, cgpa, sy, ey, setEdudata]);
   
   
   return (
