@@ -2,13 +2,23 @@ import { useState } from "react";
 import ProjectsSection from "./ProjectsSection";
 import StepperControl from "./StepperControl";
 import "./EducationForm.css"
+import { useDispatch } from "react-redux";
+import { updateprojectSections } from "../redux/Slice/user";
 
 const ProjectsForm = (props) =>{
+    const dispatch = useDispatch();
     const [projectSections, setProjectSections] = useState([]);
     const addProjectsSection = () => {
         setProjectSections([...projectSections, projectSections.length + 1]);
       };
     
+    const updateProjectSection = (index, updatedData) => {
+      const updatedSections = [...projectSections];
+      updatedSections[index] = updatedData;
+      setProjectSections(updatedSections);
+    };
+    
+    dispatch(updateprojectSections(projectSections));
     return (
     <div className="md:items-start flex flex-col sm:items-center ls:items-start ls:pr-[30px] sm:w-full ">
       <h1 className="font-juneauBold md:text-[40px] sm:text-[30px] ls:text-[35px]">
@@ -18,9 +28,9 @@ const ProjectsForm = (props) =>{
         Let your Recruiter know strength of your Projects !
       </h1>
       <div id="container" className="sm:h-[490px] ls:h-[390px] overflow-y-auto ">
-      <ProjectsSection />
+      {/* <ProjectsSection /> */}
         {projectSections.map((section, index) => (
-          <ProjectsSection key={index} />
+          <ProjectsSection key={index +1} projdata={section} setProjdata={(updatedData) => updateProjectSection(index, updatedData)} />
         ))}
       </div>
    

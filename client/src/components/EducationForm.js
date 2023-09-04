@@ -1,15 +1,22 @@
 import { useState } from "react";
 import EducationSection from "./EducationSection";
-import Field2 from "./Field2";
 import StepperControl from "./StepperControl";
-import TextField from "./TextField";
 import './EducationForm.css'
+import { useDispatch } from "react-redux";
+import { updateEducationSections } from "../redux/Slice/user";
 
 const EducationForm = (props) => {
+    const dispatch = useDispatch();
     const [educationSections, setEducationSections] = useState([]);
     const addEducationSection = () => {
-        setEducationSections([...educationSections, educationSections.length + 1]);
+        setEducationSections([...educationSections, {}]);
       };
+    const updateEducationSection = (index, updatedData) => {
+      const updatedSections = [...educationSections];
+      updatedSections[index] = updatedData;
+      setEducationSections(updatedSections);
+    };
+    dispatch(updateEducationSections(educationSections));
     
   return (
     <div className="md:items-start flex flex-col sm:items-center ls:items-start ls:pr-[30px] sm:w-full ">
@@ -20,13 +27,14 @@ const EducationForm = (props) => {
         Let your Recruiter know about your Education Background !
       </h1>
       <div id="container" className="sm:h-[490px] ls:h-[300px] overflow-y-auto ">
-      <EducationSection />
+      {/* <EducationSection key={0} setEdudata={(updatedData) => updateEducationSection(0, updatedData)}/> */}
         {educationSections.map((section, index) => (
-          <EducationSection key={index} />
+          <EducationSection key={index+1} edudata={section} setEdudata={(updatedData) => updateEducationSection(index, updatedData)}/>
         ))}
       </div>
    
       <div className="w-[300px] mt-10">
+
       <button
         id="addButton"
         className="mb-4 hover:bg-secondary border-secondary border-2 sm:w-full hover:text-white text-secondary rounded-lg font-juneauBold w-[270px] h-[48px] text-[18px]"

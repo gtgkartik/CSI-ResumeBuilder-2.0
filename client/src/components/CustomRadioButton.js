@@ -1,10 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-const CustomRadioButton = (props) => {
-  const [selected, setSelected] = useState(false);
-
+const CustomRadioButton = ({ name, selected, onSkillSelect }) => {
   const handleSelection = () => {
-    setSelected(!selected);
+    onSkillSelect(name);
   };
 
   return (
@@ -12,7 +10,7 @@ const CustomRadioButton = (props) => {
       <input
         type="checkbox"
         className="peer sr-only"
-        name={props.name}
+        name={name}
         checked={selected}
         onChange={handleSelection}
       />
@@ -23,7 +21,7 @@ const CustomRadioButton = (props) => {
       >
         <div className="flex gap-1">
           <div className="flex items-center justify-center">
-            <p>{props.name}</p>
+            <p>{name}</p>
           </div>
         </div>
       </div>

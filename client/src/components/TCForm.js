@@ -1,12 +1,22 @@
 import { useState } from "react";
 import TCSection from "./TCSection";
 import StepperControl from "./StepperControl";
+import { useDispatch } from "react-redux";
+import { updateTcSections } from "../redux/Slice/user";
 
 const TCForm = (props) => {
+    const dispatch = useDispatch();
     const [tcSections, setTCSections] = useState([]);
     const addTCSection = () => {
         setTCSections([...tcSections, tcSections.length + 1]);
       };
+    const updateTcSection = (index, updatedData) => {
+        const updatedSections = [...tcSections];
+        updatedSections[index] = updatedData;
+        setTCSections(updatedSections);
+      };
+    dispatch(updateTcSections(tcSections));
+      
     return(
         <>
         <div className="md:items-start flex flex-col sm:items-center ls:items-start ls:pr-[30px] sm:w-full ">
@@ -17,9 +27,9 @@ const TCForm = (props) => {
         Let your Recruiter know What Courses You Did for that Specific Job Role !
       </h1>
       <div id="container" className="sm:h-[490px] ls:h-[300px] overflow-y-auto ">
-      <TCSection />
+      {/* <TCSection /> */}
         {tcSections.map((section, index) => (
-          <TCSection key={index} />
+          <TCSection key={index} tcdata={section} setTcdata={(updatedData) => updateTcSection(index, updatedData)}/>
         ))}
       </div>
    

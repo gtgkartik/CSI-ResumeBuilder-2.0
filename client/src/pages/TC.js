@@ -1,13 +1,16 @@
-import NavbarDark from "../components/NavbarDark";
+// import NavbarDark from "../components/NavbarDark";
 import { Helmet } from "react-helmet";
-import { Line, Circle } from "rc-progress";
+import { Circle } from "rc-progress";
 import Stepper from "../components/Stepper";
 import TCForm from "../components/TCForm"
+import { useSelector } from "react-redux";
 
 const TC = (props) => {
+    const ps = useSelector((state) => state.userState.expSections);
     const pn = props.pagenum;
     const tnp = props.totalpages;
     const per = Math.floor(pn/tnp*100);
+    console.log(ps);
     return(
         <>
         <Helmet>

@@ -2,7 +2,21 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
     user: null,
-    ps:null,
+    introdata: {
+        fname: '',
+        lname: '',
+        email: '',
+        cn: '',
+        lpl: '',
+        city: ''
+      },
+    educationSections: [],
+    addSkills: [],
+    projectSections: [],
+    paSections: [],
+    expSections: [],
+    tcSections: [],
+    
 }
 
 export const userSlice = createSlice({
@@ -12,9 +26,30 @@ export const userSlice = createSlice({
         adduser: (state,action) => {
             state.user = action.payload
         },
+        addintro: (state, action) => {
+            state.introdata = action.payload
+        },
+        updateEducationSections: (state, action) => {
+            state.educationSections = action.payload;
+        },
+        updateSkills: (state, action) => {
+            state.addSkills = action.payload;
+        },
+        updateprojectSections: (state, action) => {
+            state.projectSections = action.payload;
+        },
+        updatepaSections: (state, action) => {
+            state.paSections = action.payload;
+        },
+        updateExpSections: (state, action) => {
+            state.expSections = action.payload;
+        },
+        updateTcSections: (state, action) => {
+            state.tcSections = action.payload;
+        },
     },
 })
 
-export const {adduser} = userSlice.actions;
+export const {adduser, addintro, updateEducationSections, updateSkills, updateprojectSections, updatepaSections, updateExpSections, updateTcSections} = userSlice.actions;
 
 export default userSlice.reducer
