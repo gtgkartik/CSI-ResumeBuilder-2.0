@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import image1 from "../Images/Screenshot_from_2023-08-16_18-26-19.jpg";
+import image1 from "../Images/Resume1.jpg";
 
 
 const templates = [
