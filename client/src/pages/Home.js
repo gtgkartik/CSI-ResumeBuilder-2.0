@@ -14,7 +14,7 @@ const SelectTemplate = () => {
     setSelectedTemplate(processedResult);
   };
 
-  console.log(user);
+  // console.log( `${user}`);
   return (
     <>
     {!user && <Navigate to='/' />
@@ -24,7 +24,7 @@ const SelectTemplate = () => {
     <style>{`body { background-color: #111727; }`}</style>
     </Helmet>
       <div >
-        {/* <Navbar bgcolor="white"  /> */}
+        <Navbar bgcolor="white"  />
         <div
           className={`md:px-[105px] ls:px-[105px] sm:px-[60px] ls:mt-[30px] sm:mt-[24px] `}
         >

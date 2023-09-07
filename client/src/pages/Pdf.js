@@ -583,7 +583,7 @@ function App() {
             </div>
           </div>
         </div></div>
-      <button onClick={handleDownloadPDF}>Generate</button>
+      <button className='w-[80px] h-[40px] rounded-md font-juneauBold bg-green' onClick={handleDownloadPDF}>Generate</button>
     </>
   );
 }
