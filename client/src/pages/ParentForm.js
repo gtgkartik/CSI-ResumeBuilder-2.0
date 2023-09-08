@@ -10,6 +10,7 @@ import Experience from "./Experience";
 import PA from "./PA"
 import TC from "./TC"
 import ResumeTemplate from "./Pdf";
+import NavbarDark from "../components/NavbarDark";
 
 const ParentForm = () => {
   const user = useSelector((state) => state.userState.user);
@@ -59,6 +60,7 @@ const ParentForm = () => {
     {!user && <Navigate to='/' />
         /* If user not loggedIn redirect to Login Page */
       }
+      <NavbarDark/>
       {page === 0 && <Intro handleNext={handleNext} pagenum={page} totalpages = {formLength}/>}
       {page === 1 && <Education handleNext={handleNext} handlePrev={handlePrev} pagenum={page} totalpages = {formLength}/>}
       {page === 2 && <Skills handleNext={handleNext} handlePrev={handlePrev} pagenum={page} totalpages = {formLength} />}
