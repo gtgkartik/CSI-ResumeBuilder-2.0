@@ -56,10 +56,11 @@ const ParentForm = () => {
   const data = searchData.get('data');
 
   return (  
-    <>
-    {!user && <Navigate to='/' />
-        /* If user not loggedIn redirect to Login Page */
-      }
+    
+    // {!user && <Navigate to='/' />
+    //     /* If user not loggedIn redirect to Login Page */
+    //   }
+      <>
       <NavbarDark/>
       {page === 0 && <Intro handleNext={handleNext} pagenum={page} totalpages = {formLength}/>}
       {page === 1 && <Education handleNext={handleNext} handlePrev={handlePrev} pagenum={page} totalpages = {formLength}/>}

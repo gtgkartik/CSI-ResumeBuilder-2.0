@@ -14,8 +14,8 @@ function App() {
       unit: 'mm',
       format: 'a4',
     });
-    const pdfWidth = 480;
-    const pdfHeight = 910;
+    const pdfWidth = 210;
+    const pdfHeight = 297;
 
     const scale = Math.min(pdfWidth / canvas.width, pdfHeight / canvas.height);
 
@@ -34,7 +34,7 @@ function App() {
 
     pdf.addPage();
 
-    pdf.addImage(canvas1, 'PNG', 0, 0, scaledWidth1, scaledHeight1);
+    pdf.addImage(canvas1, 'PNG', 0, 0, scaledWidth1, scaledHeight1, '', 'FAST');
 
     pdf.save('Resume.pdf');
   };
@@ -44,14 +44,14 @@ function App() {
   return (
     <>
       <div ref={contentRef}>
-        <div style={{ width: '2480px', height: '3808px', position: 'relative', background: 'white' }}>
+        <div style={{ width: '900px', height: '1000px', position: 'relative', background: 'white' }}>
           <div style={{ width: '760px', height: '1084px', left: '0px', top: '0px', position: 'absolute' }}>
             <div style={{ width: '640px', height: '963.56px', left: '0px', top: '0px', position: 'absolute', background: '#DEC802' }} />
           </div>
           <div style={{ paddingTop: '64px', left: '960px', top: '120px', position: 'absolute', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'flex-start', gap: '80px', display: 'inline-flex' }}>
             <div style={{ flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'flex-start', gap: '56px', display: 'flex' }}>
               <div style={{ flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'flex-start', gap: '20px', display: 'flex' }}>
-                <div style={{ width: '1307px', color: 'black', fontSize: '120px', fontFamily: 'Roboto', fontWeight: 900, textTransform: 'uppercase', lineHeight: '120px', letterSpacing: '12px', wordWrap: 'break-word' }}>Abdul manan</div>
+                <div style={{ width: '700px', color: 'black', fontSize: '120px', fontFamily: 'Roboto', fontWeight: 900, textTransform: 'uppercase', lineHeight: '120px', letterSpacing: '12px', wordWrap: 'break-word' }}>Abdul manan</div>
               </div>
               <div style={{ width: '600px', height: '4px', background: '#DEC802' }} />
               <div style={{ alignSelf: 'stretch', color: '#6A6A6A', fontSize: '50px', fontFamily: 'Roboto', fontWeight: 400, letterSpacing: '2px', wordWrap: 'break-word' }}>Graphics and UI/UX Designer</div>
@@ -67,7 +67,7 @@ function App() {
               <div style={{ alignSelf: 'stretch', color: '#6A6A6A', fontSize: '50px', fontFamily: 'Roboto', fontWeight: 400, letterSpacing: '2px', wordWrap: 'break-word' }}>https://www.behance.net/abdulmanan14</div>
             </div>
           </div>
-          <div style={{ left: '1080px', top: '1158px', position: 'absolute', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'flex-start', gap: '140px', display: 'inline-flex' }}>
+          <div style={{ left: '600px', top: '1158px', position: 'absolute', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'flex-start', gap: '140px', display: 'inline-flex' }}>
             <div style={{ flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'flex-start', gap: '80px', display: 'flex' }}>
               <div style={{ width: '1343px', height: '77px', position: 'relative' }}>
                 <div style={{ left: '0px', top: '0px', position: 'absolute', color: '#6A6A6A', fontSize: '48px', fontFamily: 'Roboto', fontWeight: 500, textTransform: 'uppercase', wordWrap: 'break-word' }}>EXPERIENCE</div>
@@ -467,11 +467,11 @@ function App() {
           </div>
           <div style={{ left: '160px', top: '240px', position: 'absolute', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'flex-start', gap: '140px', display: 'inline-flex' }}>
             <div style={{ flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'flex-start', gap: '48px', display: 'flex' }}>
-              <div style={{ width: '1329px', height: '77px', position: 'relative' }}>
+              <div style={{ width: '600px', height: '77px', position: 'relative' }}>
                 <div style={{ left: '0px', top: '0px', position: 'absolute', color: '#6A6A6A', fontSize: '48px', fontFamily: 'Roboto', fontWeight: 500, textTransform: 'uppercase', wordWrap: 'break-word' }}>Education</div>
                 <div style={{ width: '120px', height: '4px', left: '0px', top: '76px', position: 'absolute', background: '#DEC802' }} />
               </div>
-              <div style={{ width: '1331px', height: '190px', position: 'relative' }}>
+              <div style={{ width: '600px', height: '190px', position: 'relative' }}>
                 <div style={{ width: '1307px', left: '0px', top: '0px', position: 'absolute', color: 'black', fontSize: '30px', fontFamily: 'Roboto', fontWeight: 700, lineHeight: '42px', letterSpacing: '1.50px', wordWrap: 'break-word' }}>Matric ( 2012-14) CITY MODEL HIGH SCHOOL ELLAH ABAD</div>
                 <div style={{ width: '1331px', height: '108px', paddingLeft: '24px', left: '0px', top: '82px', position: 'absolute', justifyContent: 'flex-start', alignItems: 'flex-start', gap: '10px', display: 'inline-flex' }}>
                   <div style={{ width: '1307px', color: 'black', fontSize: '26px', fontFamily: 'Roboto', fontWeight: 400, lineHeight: '54px', letterSpacing: '1.30px', wordWrap: 'break-word' }}>Graduated from City Model High School, Ellahabad with a Matric degree, earning 936 out of 1050 marks. Demonstrated strong academic performance and a commitment to education.</div>
